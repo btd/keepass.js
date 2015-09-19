@@ -1,0 +1,44 @@
+{
+  "name": "keepass.io",
+  "version": "0.0.1",
+  "description": "Node.js library for reading and writing KeePass databases",
+  "keywords": [
+    "keepass",
+    "kdbx",
+    "kdb4",
+    "reader",
+    "writer",
+    "password",
+    "keyfile",
+    "security"
+  ],
+  "license": "GPL-3.0",
+  "author": "Denis Bardadym <bardadymchik@gmail.com>",
+  "contributors": [],
+  "homepage": "https://github.com/btd/keepass.js",
+  "bugs": "https://github.com/btd/keepass.js/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btd/keepass.js.git"
+  },
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "babel": "babel lib --out-dir src"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "dependencies": {
+    "es6-promise": "^3.0.2",
+    "xml2js": "~0.4.9"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "coveralls": "~2.11.2",
+    "eslint": "^1.4.1",
+    "istanbul": "~0.3.17",
+    "mocha": "~2.2.5",
+    "should": "^7.1.0"
+  }
+}
