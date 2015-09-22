@@ -3,7 +3,7 @@ var path = require('path');
 var Password = require('../src/key/Password');
 var File = require('../src/key/File');
 
-var Promise = require('es6-promise').Promise;
+var Promise = require('bluebird');
 function promisify(f) {
   return function() {
     var args = Array.prototype.slice.call(arguments);

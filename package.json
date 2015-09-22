@@ -30,7 +30,7 @@
     "node": ">=0.10.x"
   },
   "dependencies": {
-    "es6-promise": "^3.0.2",
+    "bluebird": "^2.10.1",
     "xml2js": "~0.4.9"
   },
   "devDependencies": {
