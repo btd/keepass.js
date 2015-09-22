@@ -39,12 +39,12 @@ Promise.all([readFile(databasePath), readFile(keyfilePath)])
   .then(function(args) {
     var buf = args[0];
     var key = args[1];
-    var r = new Reader([
+    var r = new Reader();
+    return r.buffer(buf, [
       new Password('123456')
       //new Password('nebuchadnezzar'),
       //new File(key)
     ]);
-    return r.buffer(buf);
   })
   .then(function(db) {
     db.name = 'Keepass js works!';
@@ -56,13 +56,17 @@ Promise.all([readFile(databasePath), readFile(keyfilePath)])
   .then(function(args) {
     var keyfile = args[1];
     var db = args[0];
-    var w = new Writer([
+    var w = new Writer();
+    console.log('write')
+    return w.buffer(db, [
       new File(keyfile),
       new Password('morpheus')
     ]);
-
-    return w.buffer(db);
   })
   .then(function(buf) {
     return writeFile(newDatabasePath, buf);
+  })
+  .catch(function(err) {
+    console.error(err)
+    console.error(err.stack());
   })
